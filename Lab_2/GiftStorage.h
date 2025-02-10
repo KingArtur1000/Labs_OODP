@@ -48,7 +48,6 @@ public:
 	}
 
 
-
 	void showAllGiftItems() const {
 		for (const auto& GiftItem : gifts) {
 			GiftItem->getInformation(); // Вывод информации о каждом подарке

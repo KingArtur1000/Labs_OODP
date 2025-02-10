@@ -1,4 +1,4 @@
-ï»¿#pragma once
+#pragma once
 
 #include <string>
 #include <iostream>
@@ -13,19 +13,19 @@ public:
 
     GiftItem(const string& n, int q, double p)
         : name(n), quantity(q), price(p) {
-        totalItems+= q;
+        totalItems += q;
     }
 
 
     ~GiftItem() {
-        totalItems-= this->getQuantity();
+        totalItems -= this->getQuantity();
     }
 
 
     void getInformation() override {
-        std::cout << "ÐÐ°Ð·Ð²Ð°Ð½Ð¸Ðµ: " << name << '\n';
-        std::cout << "ÐšÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾: " << quantity << '\n';
-        std::cout << "Ð¦ÐµÐ½Ð°: " << price << '\n';
+        std::cout << "Íàçâàíèå: " << name << '\n';
+        std::cout << "Êîëè÷åñòâî: " << quantity << '\n';
+        std::cout << "Öåíà: " << price << '\n';
     }
 
 

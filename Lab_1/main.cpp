@@ -20,6 +20,8 @@ int main() {
         cout << "-----------------\n";
     }
 
+    cout << "\tИТОГО: Общее кол-во подарков: " << GiftItem::getTotalItems() << "\n";
+
 
     delete gifts.at(2);
     gifts.at(2) = new Toy("Робот", 12, 1500.0, "Электронная игрушка");
@@ -33,6 +35,8 @@ int main() {
         cout << "-----------------\n";
     }
 
+    cout << "\tИТОГО: Общее кол-во подарков: " << GiftItem::getTotalItems() << "\n";
+
 
     gifts.at(4)->updateQuantity(2);
 
@@ -43,10 +47,15 @@ int main() {
     }
 
 
+    cout << "\tИТОГО: Общее кол-во подарков: " << GiftItem::getTotalItems() << "\n";
+
+
     for (auto* gift : gifts) {
         delete gift;
     }
 
+
+    cout << "\t\tBy KingArtur1000 :)\n";
 
     return 0;
 }

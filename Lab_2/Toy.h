@@ -1,4 +1,4 @@
-ï»¿#pragma once
+#pragma once
 
 #include "GiftItem.h"
 
@@ -18,6 +18,6 @@ public:
 
     void getInformation() override {
         GiftItem::getInformation();
-        cout << "Ð¢Ð¸Ð¿ Ð¸Ð³Ñ€ÑƒÑˆÐºÐ¸: " << typeToy << '\n';
+        cout << "Òèï èãðóøêè: " << typeToy << '\n';
     }
 };

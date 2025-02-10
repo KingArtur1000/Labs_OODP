@@ -144,6 +144,7 @@
   <ItemGroup>
     <ClInclude Include="GiftItem.h" />
     <ClInclude Include="GiftSet.h" />
+    <ClInclude Include="GiftStorage.h" />
     <ClInclude Include="IGift.h" />
     <ClInclude Include="Lab_2.h" />
     <ClInclude Include="Toy.h" />

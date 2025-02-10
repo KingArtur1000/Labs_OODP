@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 
 #include "GiftItem.h"
 
@@ -18,6 +18,12 @@ public:
 
     void getInformation() override {
         GiftItem::getInformation();
-        cout << "Ñîäåðæèìîå íàáîðà: " << contents << '\n';
+        cout << "Ð¡Ð¾Ð´ÐµÑ€Ð¶Ð¸Ð¼Ð¾Ðµ Ð½Ð°Ð±Ð¾Ñ€Ð°: " << contents << '\n';
+    }
+
+
+    void updateInfo(string name, unsigned int quantity, double price, string contents) override {
+        GiftItem::updateInfo(name, quantity, price, contents);
+        this->contents = contents;
     }
 };

@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 
 #include <string>
 #include <iostream>
@@ -7,6 +7,13 @@
 
 
 class GiftItem : public IGift {
+private:
+    string name;
+    unsigned int quantity;
+    double price;
+    static int totalItems;
+
+
 public:
     GiftItem() : name(""), quantity(0), price(0.0) { }
 
@@ -17,16 +24,26 @@ public:
     }
 
 
-    ~GiftItem() {
-        totalItems -= this->getQuantity();
-    }
-
-
     void getInformation() override {
-        std::cout << "Íàçâàíèå: " << name << '\n';
-        std::cout << "Êîëè÷åñòâî: " << quantity << '\n';
-        std::cout << "Öåíà: " << price << '\n';
+        std::cout << "ÐÐ°Ð·Ð²Ð°Ð½Ð¸Ðµ: " << name << '\n';
+        std::cout << "ÐšÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾: " << quantity << '\n';
+        std::cout << "Ð¦ÐµÐ½Ð°: " << price << '\n';
     }
+
+
+    string getName() const { return name; }
+    unsigned int getQuantity() const { return quantity; }
+    double getPrice() const { return price; }
+    void setName(string name) { this->name = name; }
+    void setQuantity(unsigned int quantity) { this->quantity = quantity; }
+    void setPrice(double price) { this->price = price; }
+
+
+    virtual void updateInfo(string name, unsigned int quantity, double price, string extraInfo) {
+        setName(name);
+        setQuantity(quantity);
+        setPrice(price);
+    };
 
 
     void updateQuantity(int amount) {
@@ -40,19 +57,9 @@ public:
     }
 
 
-protected:
-    string getName() const { return name; }
-    int getQuantity() const { return quantity; }
-    double getPrice() const { return price; }
-
-
-private:
-    string name;
-    int quantity;
-    double price;
-    static int totalItems;
-
-
+    ~GiftItem() {
+        totalItems -= this->getQuantity();
+    }
 };
 
 

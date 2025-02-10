@@ -7,18 +7,31 @@
 
 
 class GiftItem : public IGift {
+private:
+    string name;
+    int quantity;
+    double price;
+    static int totalItems;
+
+
+protected:
+    string getName() const { return name; }
+    int getQuantity() const { return quantity; }
+    double getPrice() const { return price; }
+
+
 public:
     GiftItem() : name(""), quantity(0), price(0.0) { }
 
 
     GiftItem(const string& n, int q, double p)
         : name(n), quantity(q), price(p) {
-        totalItems+= q;
+        totalItems += q;
     }
 
 
     ~GiftItem() {
-        totalItems-= this->getQuantity();
+        totalItems -= this->getQuantity();
     }
 
 
@@ -38,21 +51,6 @@ public:
     static int getTotalItems() {
         return totalItems;
     }
-
-
-protected:
-    string getName() const { return name; }
-    int getQuantity() const { return quantity; }
-    double getPrice() const { return price; }
-
-
-private:
-    string name;
-    int quantity;
-    double price;
-    static int totalItems;
-
-
 };
 
 

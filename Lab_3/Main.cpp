@@ -1,31 +1,31 @@
-#include "Lab_3.h"
+п»ї#include "Lab_3.h"
 
 
 int main() {
     setlocale(0, "");
 
 
-    // Создаём объект издателя
+    // РЎРѕР·РґР°С‘Рј РѕР±СЉРµРєС‚ РёР·РґР°С‚РµР»СЏ
     PostSaver postSaver;
 
 
-    // Создаем несколько объектов наблюдателя
+    // РЎРѕР·РґР°РµРј РЅРµСЃРєРѕР»СЊРєРѕ РѕР±СЉРµРєС‚РѕРІ РЅР°Р±Р»СЋРґР°С‚РµР»СЏ
     NotificationObserver *notificationObserver1 = new NotificationObserver();
     NotificationObserver *notificationObserver2 = new NotificationObserver();
     NotificationObserver *notificationObserver3 = new NotificationObserver();
 
 
-    // Добавляем подписчиков для нашего издателя
+    // Р”РѕР±Р°РІР»СЏРµРј РїРѕРґРїРёСЃС‡РёРєРѕРІ РґР»СЏ РЅР°С€РµРіРѕ РёР·РґР°С‚РµР»СЏ
     postSaver.Add(notificationObserver1);
     postSaver.Add(notificationObserver2);
     postSaver.Add(notificationObserver3);
 
 
-    // Сообщение, которое мы хотим отправить всем подписчикам (наблюдателям)
-    string msg = "Всех поздравляю с 8 марта!";
+    // РЎРѕРѕР±С‰РµРЅРёРµ, РєРѕС‚РѕСЂРѕРµ РјС‹ С…РѕС‚РёРј РѕС‚РїСЂР°РІРёС‚СЊ РІСЃРµРј РїРѕРґРїРёСЃС‡РёРєР°Рј (РЅР°Р±Р»СЋРґР°С‚РµР»СЏРј)
+    string msg = "Р’СЃРµС… РїРѕР·РґСЂР°РІР»СЏСЋ СЃ 8 РјР°СЂС‚Р°!";
 
 
-    // Отправляем всем наблюдателям
+    // РћС‚РїСЂР°РІР»СЏРµРј РІСЃРµРј РЅР°Р±Р»СЋРґР°С‚РµР»СЏРј
     postSaver.Send(msg);
     
 

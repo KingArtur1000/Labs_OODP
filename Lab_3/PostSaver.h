@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 
 #include <list>
 #include "IPublisher.h"
@@ -17,11 +17,11 @@ private:
 
 public:
     virtual ~PostSaver() {
-        cout << "Ïîêà, ÿ áûë Èçäàòåëåì :)\n";
+        cout << "ÐŸÐ¾ÐºÐ°, Ñ Ð±Ñ‹Ð» Ð˜Ð·Ð´Ð°Ñ‚ÐµÐ»ÐµÐ¼ :)\n";
     }
 
 
-    // Ìåòîäû äëÿ ïðèâÿçêè êîíêðåòíûõ íàáëþäàòåëåé ïîä ýòî ñîáûòèå 
+    // ÐœÐµÑ‚Ð¾Ð´Ñ‹ Ð´Ð»Ñ Ð¿Ñ€Ð¸Ð²ÑÐ·ÐºÐ¸ ÐºÐ¾Ð½ÐºÑ€ÐµÑ‚Ð½Ñ‹Ñ… Ð½Ð°Ð±Ð»ÑŽÐ´Ð°Ñ‚ÐµÐ»ÐµÐ¹ Ð¿Ð¾Ð´ ÑÑ‚Ð¾ ÑÐ¾Ð±Ñ‹Ñ‚Ð¸Ðµ 
     void Add(IObserver* observer) override {
         observers.push_back(observer);
     }
@@ -32,7 +32,7 @@ public:
     }
 
 
-    // Ìåòîä äëÿ îòïðàâêè ñîîáùåíèÿ âñåì ïîäïèñàííûì íàáëþäàòåëÿì
+    // ÐœÐµÑ‚Ð¾Ð´ Ð´Ð»Ñ Ð¾Ñ‚Ð¿Ñ€Ð°Ð²ÐºÐ¸ ÑÐ¾Ð¾Ð±Ñ‰ÐµÐ½Ð¸Ñ Ð²ÑÐµÐ¼ Ð¿Ð¾Ð´Ð¿Ð¸ÑÐ°Ð½Ð½Ñ‹Ð¼ Ð½Ð°Ð±Ð»ÑŽÐ´Ð°Ñ‚ÐµÐ»ÑÐ¼
     void Send(string &msg) override {
         for (IObserver *observer : observers) {
             observer->Update(msg);

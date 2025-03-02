@@ -1,12 +1,12 @@
-#pragma once
+п»ї#pragma once
 
 #include <iostream>
 #include <vector>
 
-// Издатель
+// РР·РґР°С‚РµР»СЊ
 #include "PostSaver.h"
 
-// Наблюдатель
+// РќР°Р±Р»СЋРґР°С‚РµР»СЊ
 #include "NotificationObserver.h"
 
 

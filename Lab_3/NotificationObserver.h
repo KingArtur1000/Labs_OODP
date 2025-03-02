@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 
 #include <iostream>
 #include "IObserver.h"
@@ -15,7 +15,7 @@ public:
     virtual ~NotificationObserver() {}
 
     void Update(const string& msg_from_subject) override {
-        cout << "Ñîîáùåíèå îò èçäàòåëÿ: " << msg_from_subject << "\n\n";
+        cout << "Ð¡Ð¾Ð¾Ð±Ñ‰ÐµÐ½Ð¸Ðµ Ð¾Ñ‚ Ð¸Ð·Ð´Ð°Ñ‚ÐµÐ»Ñ: " << msg_from_subject << "\n\n";
     }
 
 };

@@ -17,10 +17,6 @@ private:
 	vector<GiftItem*> gifts;
 
 
-protected:
-	
-
-
 public:
 	void addGift(GiftItem* gift) {
 		gifts.push_back(gift); // Добавление нового подарка в список
@@ -83,7 +79,7 @@ public:
 	}
 
 
-	// Да-да впервые используем Лямбда-функцию (анонимную функцию), правда в С# объявление куда проще :) ()=> b и всё!
+	// Да-да впервые используем Лямбда-функцию (анонимную функцию), правда в С# объявление куда проще :) ()=>  и всё!
 	void sortGiftsByName() {
 		sort(begin(gifts), end(gifts), [](GiftItem* gift_1, GiftItem* gift_2) {
 			return gift_1->getName() < gift_2->getName();

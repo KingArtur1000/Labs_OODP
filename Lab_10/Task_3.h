@@ -1,27 +1,54 @@
 #pragma once
 
-#include <algorithm>
 #include <iostream>
+#include <vector>
 #include <thread>
-#include <string>
+#include <mutex>
 
 
-using std::thread;
-using std::string;
-using std::cout;
-using std::this_thread::get_id;
+std::mutex mtx; // Мьютекс для синхронизации доступа к общей переменной
+int scalarSum = 0; // Скалярная переменная для результата
 
 
-// Функция для перемножения частей векторов
-void multiply_intervals(const std::vector<int>& vec1, const std::vector<int>& vec2,
-    int start, int end, int& local_result) {
-    local_result = 0;
+// Функция для выполнения умножения в интервале
+void multiplyIntervals(const std::vector<int>& vec1, const std::vector<int>& vec2, int start, int end) {
+    int localSum = 0; // Локальная переменная результата
     for (int i = start; i < end; ++i) {
-        local_result += vec1[i] * vec2[i];
+        localSum += vec1[i] * vec2[i];
     }
+
+    // Синхронизированный доступ к общей переменной
+    std::lock_guard<std::mutex> lock(mtx);
+    scalarSum += localSum;
+
+    /*
+        • Гарантирует, что только один поток в любой момент времени сможет обновить scalarSum.
+        • Снижает вероятность ошибок и конфликтов при доступе к общему ресурсу.
+        • Упрощает управление мьютексом за счёт использования std::lock_guard,
+          который автоматически разблокирует мьютекс при выходе из области видимости.
+    */
 }
 
 
+// Функция для перемножения элементов двух векторов
+void multiplyVectorsInIntervals(const std::vector<int>& vec1, const std::vector<int>& vec2) {
+    int numIntervals = 2; // Количество интервалов
+    int intervalSize = vec1.size() / numIntervals;
 
+    std::vector<std::thread> threads;
 
+    // Запускаем потоки для обработки интервалов
+    for (int i = 0; i < numIntervals; ++i) {
+        int start = i * intervalSize;
+        int end = (i + 1) * intervalSize;
+        threads.emplace_back(multiplyIntervals, std::ref(vec1), std::ref(vec2), start, end);
+    }
 
+    // Ждём завершения всех потоков
+    for (std::thread& t : threads) {
+        t.join();
+    }
+
+    // Выводим итоговый результат
+    std::cout << "Результирующее значение: " << scalarSum << std::endl;
+}

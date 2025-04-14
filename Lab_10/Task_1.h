@@ -1,20 +1,19 @@
 #pragma once
 
-#include <algorithm>
 #include <iostream>
+#include <vector>
 #include <thread>
-#include <string>
 
 
-using std::thread;
-using std::string;
-using std::cout;
+// Функция для обратного порядка вектора
+void reverseVector(const std::vector<int>& A) {
+    std::vector<int> B(A.rbegin(), A.rend()); // Создаём обратный порядок
 
+    std::cout << "Обратный порядок вектора: ";
+    for (const int& num : B) {
+        std::cout << num << " ";
+    }
 
-void threadFunction(string str) {
-	cout << "Исходный текст: " << str << "\n\n";
-	std::transform(str.begin(), str.end(), str.begin(), ::toupper);
-	cout << "Результат: " << str << "\n\n";
+    std::cout << std::endl;
 }
-
 

@@ -1,4 +1,4 @@
-#include "Classes.h"
+Ôªø#include "Classes.h"
 
 int main() {
     setlocale(0, "");
@@ -10,14 +10,14 @@ int main() {
     NewMediaPlayer* adapter = new MediaPlayerAdapter(oldPlayer);
 
 
-    // ¬ÓÒÔÓËÁ‚Â‰ÂÌËÂ Ù‡ÈÎÓ‚ ˜ÂÂÁ ‡‰‡ÔÚÂ
-    adapter->play("song.mp3");   // œÓ‰‰ÂÊË‚‡ÂÏ˚È ÙÓÏ‡Ú
+    // –í–æ—Å–ø—Ä–æ–∏–∑–≤–µ–¥–µ–Ω–∏–µ —Ñ–∞–π–ª–æ–≤ —á–µ—Ä–µ–∑ –∞–¥–∞–ø—Ç–µ—Ä
+    adapter->play("song.mp3");   // –ü–æ–¥–¥–µ—Ä–∂–∏–≤–∞–µ–º—ã–π —Ñ–æ—Ä–º–∞—Ç
     std::cout << '\n';
 
-    adapter->play("audio.wav"); // œÓ‰‰ÂÊË‚‡ÂÏ˚È ÙÓÏ‡Ú
+    adapter->play("audio.wav"); // –ü–æ–¥–¥–µ—Ä–∂–∏–≤–∞–µ–º—ã–π —Ñ–æ—Ä–º–∞—Ç
     std::cout << '\n';
 
-    adapter->play("video.mp4"); // ÕÂÔÓ‰‰ÂÊË‚‡ÂÏ˚È ÙÓÏ‡Ú
+    adapter->play("video.mp4"); // –ù–µ–ø–æ–¥–¥–µ—Ä–∂–∏–≤–∞–µ–º—ã–π —Ñ–æ—Ä–º–∞—Ç
     std::cout << '\n';
 
 

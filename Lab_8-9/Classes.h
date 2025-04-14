@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 
 #include <iostream>
 #include <string>
@@ -9,10 +9,10 @@ class OldMediaPlayer {
 public:
     void play(const std::string& audioType, const std::string& fileName) {
         if (audioType == "mp3" || audioType == "wav") {
-            std::cout << "Âîñïðîèçâåäåíèå ôàéëà: " << fileName << " (Òèï: " << audioType << ")\n";
+            std::cout << "Ð’Ð¾ÑÐ¿Ñ€Ð¾Ð¸Ð·Ð²ÐµÐ´ÐµÐ½Ð¸Ðµ Ñ„Ð°Ð¹Ð»Ð°: " << fileName << " (Ð¢Ð¸Ð¿: " << audioType << ")\n";
         }
         else {
-            std::cout << "Îøèáêà: ôîðìàò ôàéëà " << audioType << " íå ïîääåðæèâàåòñÿ.\n";
+            std::cout << "ÐžÑˆÐ¸Ð±ÐºÐ°: Ñ„Ð¾Ñ€Ð¼Ð°Ñ‚ Ñ„Ð°Ð¹Ð»Ð° " << audioType << " Ð½Ðµ Ð¿Ð¾Ð´Ð´ÐµÑ€Ð¶Ð¸Ð²Ð°ÐµÑ‚ÑÑ.\n";
         }
     }
 };
@@ -29,7 +29,7 @@ public:
 
 class MediaPlayerAdapter : public NewMediaPlayer {
 private:
-    OldMediaPlayer* oldMediaPlayer; // Óêàçàòåëü íà ñòàðûé ïëååð
+    OldMediaPlayer* oldMediaPlayer; // Ð£ÐºÐ°Ð·Ð°Ñ‚ÐµÐ»ÑŒ Ð½Ð° ÑÑ‚Ð°Ñ€Ñ‹Ð¹ Ð¿Ð»ÐµÐµÑ€
 
 
 public:
@@ -37,7 +37,7 @@ public:
 
 
     void play(const std::string& fileName) override {
-        // Îïðåäåëÿåì òèï ôàéëà ïî åãî ðàñøèðåíèþ
+        // ÐžÐ¿Ñ€ÐµÐ´ÐµÐ»ÑÐµÐ¼ Ñ‚Ð¸Ð¿ Ñ„Ð°Ð¹Ð»Ð° Ð¿Ð¾ ÐµÐ³Ð¾ Ñ€Ð°ÑÑˆÐ¸Ñ€ÐµÐ½Ð¸ÑŽ
         std::string audioType;
         if (fileName.substr(fileName.find_last_of('.') + 1) == "mp3") {
             audioType = "mp3";
@@ -50,12 +50,12 @@ public:
         }
 
 
-        std::cout << "Àäàïòåð: âõîäÿùèé ôàéë - " << fileName << "\n";
+        std::cout << "ÐÐ´Ð°Ð¿Ñ‚ÐµÑ€: Ð²Ñ…Ð¾Ð´ÑÑ‰Ð¸Ð¹ Ñ„Ð°Ð¹Ð» - " << fileName << "\n";
 
-        // Ïåðåäà¸ì îáðàáîòêó ñòàðîìó ïëååðó
+        // ÐŸÐµÑ€ÐµÐ´Ð°Ñ‘Ð¼ Ð¾Ð±Ñ€Ð°Ð±Ð¾Ñ‚ÐºÑƒ ÑÑ‚Ð°Ñ€Ð¾Ð¼Ñƒ Ð¿Ð»ÐµÐµÑ€Ñƒ
         oldMediaPlayer->play(audioType, fileName);
 
 
-        std::cout << "Àäàïòåð: çàâåðøèë îáðàáîòêó ôàéëà - " << fileName << "\n";
+        std::cout << "ÐÐ´Ð°Ð¿Ñ‚ÐµÑ€: Ð·Ð°Ð²ÐµÑ€ÑˆÐ¸Ð» Ð¾Ð±Ñ€Ð°Ð±Ð¾Ñ‚ÐºÑƒ Ñ„Ð°Ð¹Ð»Ð° - " << fileName << "\n";
     }
 };

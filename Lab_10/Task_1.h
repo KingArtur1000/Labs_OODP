@@ -2,7 +2,6 @@
 
 #include <iostream>
 #include <vector>
-#include <thread>
 
 
 // Функция для обратного порядка вектора

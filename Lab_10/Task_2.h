@@ -5,16 +5,20 @@
 #include <vector>
 
 
-// Функция для вывода информации о потоке
+using std::vector;
+using std::cout;
+using std::thread;
+
+
+
 void printIteratorInfo(int iterator) {
-    std::cout << "Итератор: " << iterator << ", ID потока: " << std::this_thread::get_id() << std::endl;
+    cout << "Итератор: " << iterator << ", ID потока: " << std::this_thread::get_id() << std::endl;
 }
 
 
-// Функция для создания потоков в цикле
 void createThreadsWithIterator() {
-    const int numThreads = 5; // Количество потоков
-    std::vector<std::thread> threads;
+    const int numThreads = 10; 
+    vector<thread> threads;
 
     // Создаем потоки в цикле
     for (int i = 0; i < numThreads; ++i) {
@@ -22,7 +26,7 @@ void createThreadsWithIterator() {
     }
 
     // Ждём завершения всех потоков
-    for (std::thread& t : threads) {
+    for (thread& t : threads) {
         t.join();
     }
 }

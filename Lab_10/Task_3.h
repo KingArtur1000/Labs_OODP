@@ -35,7 +35,7 @@ void multiplyVectorsInIntervals(const std::vector<int>& vec1, const std::vector<
     int numIntervals = 2; // Количество интервалов
     int intervalSize = vec1.size() / numIntervals;
 
-    std::vector<std::thread> threads;
+    vector<thread> threads;
 
     // Запускаем потоки для обработки интервалов
     for (int i = 0; i < numIntervals; ++i) {
@@ -45,10 +45,10 @@ void multiplyVectorsInIntervals(const std::vector<int>& vec1, const std::vector<
     }
 
     // Ждём завершения всех потоков
-    for (std::thread& t : threads) {
+    for (thread& t : threads) {
         t.join();
     }
 
     // Выводим итоговый результат
-    std::cout << "Результирующее значение: " << scalarSum << std::endl;
+    cout << "Результирующее значение: " << scalarSum << std::endl;
 }

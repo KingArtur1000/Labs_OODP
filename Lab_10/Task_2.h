@@ -1,27 +1,27 @@
-#pragma once
+п»ї#pragma once
 
 #include <iostream>
 #include <thread>
 #include <vector>
 
 
-// Функция для вывода информации о потоке
+// Р¤СѓРЅРєС†РёСЏ РґР»СЏ РІС‹РІРѕРґР° РёРЅС„РѕСЂРјР°С†РёРё Рѕ РїРѕС‚РѕРєРµ
 void printIteratorInfo(int iterator) {
-    std::cout << "Итератор: " << iterator << ", ID потока: " << std::this_thread::get_id() << std::endl;
+    std::cout << "РС‚РµСЂР°С‚РѕСЂ: " << iterator << ", ID РїРѕС‚РѕРєР°: " << std::this_thread::get_id() << std::endl;
 }
 
 
-// Функция для создания потоков в цикле
+// Р¤СѓРЅРєС†РёСЏ РґР»СЏ СЃРѕР·РґР°РЅРёСЏ РїРѕС‚РѕРєРѕРІ РІ С†РёРєР»Рµ
 void createThreadsWithIterator() {
-    const int numThreads = 5; // Количество потоков
+    const int numThreads = 5; // РљРѕР»РёС‡РµСЃС‚РІРѕ РїРѕС‚РѕРєРѕРІ
     std::vector<std::thread> threads;
 
-    // Создаем потоки в цикле
+    // РЎРѕР·РґР°РµРј РїРѕС‚РѕРєРё РІ С†РёРєР»Рµ
     for (int i = 0; i < numThreads; ++i) {
-        threads.emplace_back(printIteratorInfo, i); // Передаём номер итератора
+        threads.emplace_back(printIteratorInfo, i); // РџРµСЂРµРґР°С‘Рј РЅРѕРјРµСЂ РёС‚РµСЂР°С‚РѕСЂР°
     }
 
-    // Ждём завершения всех потоков
+    // Р–РґС‘Рј Р·Р°РІРµСЂС€РµРЅРёСЏ РІСЃРµС… РїРѕС‚РѕРєРѕРІ
     for (std::thread& t : threads) {
         t.join();
     }

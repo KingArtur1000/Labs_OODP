@@ -1,15 +1,15 @@
-#pragma once
+п»ї#pragma once
 
 #include <iostream>
 #include <vector>
 #include <thread>
 
 
-// Функция для обратного порядка вектора
+// Р¤СѓРЅРєС†РёСЏ РґР»СЏ РѕР±СЂР°С‚РЅРѕРіРѕ РїРѕСЂСЏРґРєР° РІРµРєС‚РѕСЂР°
 void reverseVector(const std::vector<int>& A) {
-    std::vector<int> B(A.rbegin(), A.rend()); // Создаём обратный порядок
+    std::vector<int> B(A.rbegin(), A.rend()); // РЎРѕР·РґР°С‘Рј РѕР±СЂР°С‚РЅС‹Р№ РїРѕСЂСЏРґРѕРє
 
-    std::cout << "Обратный порядок вектора: ";
+    std::cout << "РћР±СЂР°С‚РЅС‹Р№ РїРѕСЂСЏРґРѕРє РІРµРєС‚РѕСЂР°: ";
     for (const int& num : B) {
         std::cout << num << " ";
     }

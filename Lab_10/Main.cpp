@@ -1,25 +1,25 @@
-#include "Task_1.h"
+ï»¿#include "Task_1.h"
 #include "Task_2.h"
 #include "Task_3.h"
 
 
 int main() {
     setlocale(0, "");
-    std::cout << "Âàðèàíò 5, Äìèòðèåâ Àðòóð Àëåêñàíäðîâè÷:\n\n";
+    std::cout << "Ð’Ð°Ñ€Ð¸Ð°Ð½Ñ‚ 5, Ð”Ð¼Ð¸Ñ‚Ñ€Ð¸ÐµÐ² ÐÑ€Ñ‚ÑƒÑ€ ÐÐ»ÐµÐºÑÐ°Ð½Ð´Ñ€Ð¾Ð²Ð¸Ñ‡:\n\n";
 
 
-    std::cout << "Çàäàíèå 1: Îáðàòíûé ïîðÿäîê ýëåìåíòîâ âåêòîðà\n";
+    std::cout << "Ð—Ð°Ð´Ð°Ð½Ð¸Ðµ 1: ÐžÐ±Ñ€Ð°Ñ‚Ð½Ñ‹Ð¹ Ð¿Ð¾Ñ€ÑÐ´Ð¾Ðº ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð² Ð²ÐµÐºÑ‚Ð¾Ñ€Ð°\n";
     std::vector<int> A = { 1, 2, 3 };
     reverseVector(A);
     std::cout << "\n\n";
 
 
-    std::cout << "Çàäàíèå 2: Ïîòîêè ñ èòåðàòîðîì\n";
+    std::cout << "Ð—Ð°Ð´Ð°Ð½Ð¸Ðµ 2: ÐŸÐ¾Ñ‚Ð¾ÐºÐ¸ Ñ Ð¸Ñ‚ÐµÑ€Ð°Ñ‚Ð¾Ñ€Ð¾Ð¼\n";
     createThreadsWithIterator();
     std::cout << "\n\n";
 
 
-    std::cout << "Çàäàíèå 3: Ïåðåìíîæåíèå ýëåìåíòîâ âåêòîðîâ\n";
+    std::cout << "Ð—Ð°Ð´Ð°Ð½Ð¸Ðµ 3: ÐŸÐµÑ€ÐµÐ¼Ð½Ð¾Ð¶ÐµÐ½Ð¸Ðµ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð² Ð²ÐµÐºÑ‚Ð¾Ñ€Ð¾Ð²\n";
     std::vector<int> vec1 = { 1, 2, 3, 4 };
     std::vector<int> vec2 = { 5, 6, 7, 8 };
     multiplyVectorsInIntervals(vec1, vec2);
